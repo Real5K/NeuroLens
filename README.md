@@ -1,5 +1,7 @@
 # NeuroLens
 
+---
+
 ## 📌 Overview
 **NeuroLens** is a deep learning project designed to classify brain tumor MRI scans into four categories: **glioma**, **meningioma**, **notumor**, and **pituitary**. Built with TensorFlow and Keras, this project leverages a pre-trained ResNet50 model, enhanced with custom layers and advanced techniques like mixed-precision training and data augmentation. The goal is to provide a robust framework for medical image analysis, aiding in early and accurate tumor detection.
 
