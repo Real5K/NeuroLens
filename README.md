@@ -1,8 +1,5 @@
 # NeuroLens
 
-![Sample MRI Images](https://via.placeholder.com/800x400?text=MRI+Sample+Images)  
-*Example MRI scans from the dataset (glioma, meningioma, notumor, pituitary).*
-
 ---
 
 ## 📌 Overview
