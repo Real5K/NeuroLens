@@ -77,8 +77,8 @@ brain-tumor-mri-dataset/
 #### Confusion Matrix  
 <div align="center">
   <img src="https://github.com/user-attachments/assets/89dc7c48-4633-432c-ac78-531d3d6748e8" alt="Confusion Matrix" width="50%" style="display: block; margin: 0 auto;">
+  <p><em>Normalized confusion matrix showing class-wise precision and recall.</em></p>
 </div>
-*Normalized confusion matrix showing class-wise precision and recall.*
 
 #### Loss and Accuracy Curves  
 ![Training Curves](https://via.placeholder.com/800x400?text=Loss+and+Accuracy+Curves)  
