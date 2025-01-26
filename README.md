@@ -73,8 +73,7 @@ brain-tumor-mri-dataset/
 - **Training Accuracy**: 98.5% (example)
 - **Validation Accuracy**: 94.2% (example)
 - **Test Accuracy**: 92.8% (example)
-
-#### Confusion Matrix  
+ 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/89dc7c48-4633-432c-ac78-531d3d6748e8" alt="Confusion Matrix" width="50%" style="display: block; margin: 0 auto;">
   <p><em>Normalized confusion matrix showing class-wise precision and recall.</em></p>
