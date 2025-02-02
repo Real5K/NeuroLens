@@ -17,7 +17,7 @@
 - Load brain tumor datasets (e.g., MRI scans, Kaggle datasets).  
 - Resize images to a consistent dimension suitable for CNN models.  
 - Normalize image data to enhance training stability.  
-- Apply augmentation techniques such as rotation, flipping, and brightness adjustments.  
+- Apply **augmentation techniques** such as rotation, flipping, and brightness adjustments to improve model generalization.  
 - Split data into training, validation, and testing sets.  
 
 ### 2⃣ Model Selection & Training
@@ -35,7 +35,7 @@
 ### 4⃣ Model Evaluation & Performance Metrics
 - Compute **accuracy, precision, recall, and F1-score** for model performance assessment.  
 - Generate **confusion matrices** to analyze classification performance.  
-- Evaluate models using **ROC curves and AUC scores**.   
+- Evaluate models using **ROC curves and AUC scores**.  
 
 ## 🎯 Applications
 
