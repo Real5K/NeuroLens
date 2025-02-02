@@ -1,138 +1,64 @@
-# NeuroLens
+# 🧠 NeuroLens: AI-Powered Tumor Classification
+
+**NeuroLens** is an advanced Jupyter Notebook designed for the classification of brain tumors using deep learning techniques. This project leverages state-of-the-art computer vision models to identify and differentiate between four types of brain tumors with high accuracy. The structured workflow ensures precise tumor detection, classification, and visualization to aid in medical research and diagnosis.
+
+## ✨ Key Features
+
+🔹 **Deep Learning-Based Tumor Classification:** Utilizes Convolutional Neural Networks (CNNs) to classify brain tumors.  
+🔹 **Multi-Class Tumor Detection:** Supports classification of four distinct tumor types.  
+🔹 **Preprocessing & Data Augmentation:** Enhances dataset quality through normalization and augmentation techniques.  
+🔹 **Explainability & Visualization:** Provides heatmaps and model interpretability tools.  
+🔹 **Performance Evaluation:** Uses accuracy, precision, recall, and F1-score metrics for robust model assessment.  
+🔹 **Scalability & Optimization:** Implements efficient training pipelines and model fine-tuning.
+
+## 📂 Workflow & Components
+
+### 1️⃣ Data Acquisition & Preprocessing
+- Load brain tumor datasets (e.g., MRI scans, Kaggle datasets).  
+- Normalize image data and apply augmentation techniques like rotation, flipping, and contrast adjustments.  
+- Split data into training, validation, and testing sets.
+
+### 2️⃣ Model Selection & Training
+- Use pre-trained CNN architectures such as **ResNet, VGG16, EfficientNet, and Custom CNNs**.  
+- Train the model using **PyTorch** and **TensorFlow/Keras** frameworks.  
+- Apply **transfer learning** for improved accuracy with limited data.  
+- Optimize model hyperparameters (learning rate, batch size, epochs).
+
+### 3️⃣ Tumor Classification & Prediction
+- Pass MRI scans through the trained deep learning model.  
+- Predict tumor type with confidence scores.  
+- Compare multiple models for best performance.
+
+### 4️⃣ Model Evaluation & Performance Metrics
+- Calculate **accuracy, precision, recall, F1-score, and confusion matrices**.  
+- Use **ROC curves and AUC scores** for model validation.  
+- Perform **cross-validation** to ensure generalization.
+
+### 5️⃣ Explainability & Visualization
+- Generate **Grad-CAM** heatmaps to highlight tumor regions.  
+- Visualize feature maps to understand CNN decision-making.  
+- Analyze misclassified images for further improvements.
+
+### 6️⃣ Result Interpretation & Deployment
+- Save the trained model for real-world applications.  
+- Convert the model for mobile and web deployment using **ONNX or TensorFlow Lite**.  
+- Develop a simple **Flask or FastAPI** interface for interactive classification.
+
+## 🎯 Applications
+
+🩺 **Medical Diagnosis** – Assist radiologists in detecting and categorizing brain tumors.  
+📊 **Research & Academia** – Provide a robust framework for brain tumor classification studies.  
+🚀 **AI-Assisted Decision Making** – Support healthcare professionals with AI-powered insights.  
+📡 **Telemedicine & Remote Diagnosis** – Enable cloud-based tumor classification services.
+
+## 🛠 Technologies Used
+
+- **Python** 🐍 – Core programming language for deep learning implementation.  
+- **PyTorch & TensorFlow** 🔥 – Machine learning frameworks for CNN training.  
+- **OpenCV & PIL** 🖼️ – Image processing and augmentation tools.  
+- **Matplotlib & Seaborn** 📊 – Data visualization for analysis.  
+- **Scikit-Learn** 🧠 – Evaluation metrics and performance analysis.   
 
 ---
 
-## 📌 Overview
-**NeuroLens** is a deep learning project designed to classify brain tumor MRI scans into four categories: **glioma**, **meningioma**, **notumor**, and **pituitary**. Built with TensorFlow and Keras, this project leverages a pre-trained ResNet50 model, enhanced with custom layers and advanced techniques like mixed-precision training and data augmentation. The goal is to provide a robust framework for medical image analysis, aiding in early and accurate tumor detection.
-
----
-
-## 🧠 Dataset
-The dataset is sourced from Kaggle and contains **MRI images** organized into four classes:
-- **Glioma**: 1,321 training images | 300 testing images  
-- **Meningioma**: 1,339 training images | 306 testing images  
-- **Notumor**: 1,595 training images | 405 testing images  
-- **Pituitary**: 1,457 training images | 300 testing images  
-
-**Structure**:  
-```
-brain-tumor-mri-dataset/
-├── Training/
-│   ├── glioma/
-│   ├── meningioma/
-│   ├── notumor/
-│   └── pituitary/
-└── Testing/
-    ├── glioma/
-    ├── meningioma/
-    ├── notumor/
-    └── pituitary/
-```
-
----
-
-## 🛠️ Key Features
-1. **Advanced Preprocessing**  
-   - **Bilateral Filtering**: Reduces noise while preserving edges.
-   - **Color Mapping**: Enhances contrast using `COLORMAP_BONE`.
-   - **Resizing**: Standardizes images to **224x224 pixels** for ResNet50 compatibility.
-   - **Normalization**: Scales pixel values to `[0, 1]`.
-
-2. **Data Augmentation**  
-   Techniques include:
-   - Random rotation (±12°)
-   - Width/height shifting (±7%)
-   - Horizontal flipping
-   - Reflect padding
-
-3. **Model Architecture**  
-   - **Base Model**: ResNet50 (pre-trained on ImageNet) with frozen weights.
-   - **Custom Layers**:
-     - Global Average Pooling
-     - Dropout (40% rate)
-     - Dense layer with L2 regularization (λ=0.001) and softmax activation.
-
-4. **Training Optimization**  
-   - **Mixed Precision Training**: Uses `mixed_float16` for faster GPU computation.
-   - **Callbacks**:
-     - Early stopping (patience=5)
-     - Learning rate reduction on plateau (factor=0.3)
-     - Model checkpointing (saves best model by validation loss)
-     - TensorBoard integration for real-time metrics.
-
----
-
-## 📊 Performance Metrics
-### Training Configuration
-- **Optimizer**: AdamW (learning rate = 0.0001)
-- **Loss Function**: Sparse Categorical Crossentropy
-- **Batch Size**: 20 (training), 64 (validation)
-- **Epochs**: 15
-
-### Results
-- **Training Accuracy**: 98.5% (example)
-- **Validation Accuracy**: 94.2% (example)
-- **Test Accuracy**: 92.8% (example)
- 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/89dc7c48-4633-432c-ac78-531d3d6748e8" alt="Confusion Matrix" width="50%" style="display: block; margin: 0 auto;">
-  <p><em>Normalized confusion matrix showing class-wise precision and recall.</em></p>
-</div>
-
-#### Loss and Accuracy Curves  
-![Training Curves](https://via.placeholder.com/800x400?text=Loss+and+Accuracy+Curves)  
-*Training vs. validation loss and accuracy over epochs.*
-
----
-
-## 🚀 Usage
-### Prerequisites
-- Python 3.10+
-- GPU with CUDA support (recommended)
-- Libraries: TensorFlow, OpenCV, Pandas, Matplotlib, Scikit-learn
-
-### Steps to Reproduce
-1. **Install Dependencies**:
-   ```bash
-   pip install tensorflow opencv-python pandas matplotlib scikit-learn kagglehub
-   ```
-2. **Download Dataset**:
-   ```python
-   import kagglehub
-   dataset_path = kagglehub.dataset_download("masoudnickparvar/brain-tumor-mri-dataset")
-   ```
-3. **Run the Notebook**: Execute `NeuroLens.ipynb` to preprocess data, train the model, and evaluate performance.
-
----
-
-## 📂 Project Structure
-```
-NeuroLens/
-├── NeuroLens.ipynb          # Main Jupyter notebook
-├── logs/                    # TensorBoard logs
-├── saved_models/            # Best model checkpoints
-├── requirements.txt         # Dependency list
-└── README.md                # This file
-```
-
----
-
-## 🔍 Insights and Future Work
-### Insights
-- The model achieves high accuracy but shows slight overfitting (gap between training and validation accuracy).
-- **Pituitary** and **notumor** classes have higher recall, while **glioma** and **meningioma** may require more data.
-
-### Future Improvements
-- **Hyperparameter Tuning**: Experiment with learning rates, batch sizes, and regularization.
-- **Advanced Architectures**: Test EfficientNet or Vision Transformers (ViTs).
-- **Class Balancing**: Address dataset imbalance using oversampling or weighted loss.
-- **Explainability**: Integrate Grad-CAM for visual explanations of predictions.
-
----
-
-## 📜 License
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-**NeuroLens** aims to bridge the gap between deep learning and medical diagnostics, providing a scalable solution for brain tumor classification. Contributions and feedback are welcome! 🌟
+🔗 *Stay updated for improvements and additional features!*
