@@ -35,8 +35,7 @@
 ### 4⃣ Model Evaluation & Performance Metrics
 - Compute **accuracy, precision, recall, and F1-score** for model performance assessment.  
 - Generate **confusion matrices** to analyze classification performance.  
-- Evaluate models using **ROC curves and AUC scores**.  
-- Perform **cross-validation** to measure model generalization.  
+- Evaluate models using **ROC curves and AUC scores**.   
 
 ## 🎯 Applications
 
