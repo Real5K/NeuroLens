@@ -1,1 +1,4 @@
-<embed src="report.pdf" width="100%" height="600px" type="application/pdf">
+![Page 1](report/page-1.png)
+![Page 2](report/page-2.png)
+![Page 3](report/page-3.png)
+![Page 4](report/page-4.png)
